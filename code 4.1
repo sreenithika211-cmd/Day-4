@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Nithika sree",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.7, "left": 177.4, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": 123.5,
+      "left": -9.8,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-led", "id": "led", "top": 150, "left": 300, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "res",
+      "top": 23.15,
+      "left": 48,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pot:VCC", "esp:3V3", "red", [ "v28.8", "h258.4", "v-57.6" ] ],
+    [ "pot:GND", "esp:GND.1", "black", [ "v67.2", "h288", "v-105.5" ] ],
+    [ "pot:SIG", "esp:D34", "green", [ "v48", "h105.2", "v-182.2" ] ],
+    [ "esp:D25", "res:1", "green", [] ],
+    [ "res:2", "led:A", "green", [ "v-48", "h258", "v230.4", "h-39.8" ] ],
+    [ "led:C", "esp:GND.2", "black", [ "v48", "h-161.4", "v-86.3" ] ]
+  ],
+  "dependencies": {}
+}
